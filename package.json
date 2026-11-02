@@ -1,0 +1,47 @@
+{
+  "name": "voucher",
+  "version": "0.1.0",
+  "description": "Vue 3 accounting voucher editor",
+  "type": "module",
+  "license": "MIT",
+  "author": "yangjingnan",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/voucher.js",
+  "module": "./dist/voucher.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/voucher.js"
+    },
+    "./style.css": "./dist/voucher.css"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "dev": "vite --config vite.demo.config.ts",
+    "build": "vite build && vue-tsc -p tsconfig.build.json",
+    "typecheck": "vue-tsc --noEmit"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.20",
+    "nzh": "^1.0.14"
+  },
+  "devDependencies": {
+    "vue": "3.5.34",
+    "@vitejs/plugin-vue": "6.0.6",
+    "vite": "8.0.12",
+    "typescript": "6.0.3",
+    "vue-tsc": "3.2.8",
+    "@types/node": "24.19.0"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
