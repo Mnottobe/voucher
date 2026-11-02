@@ -1,10 +1,26 @@
 {
-  "name": "voucher",
+  "name": "@mnottobe/voucher",
   "version": "0.1.0",
   "description": "Vue 3 accounting voucher editor",
+  "keywords": [
+    "vue",
+    "vue3",
+    "voucher",
+    "accounting",
+    "ledger",
+    "记账凭证"
+  ],
   "type": "module",
   "license": "MIT",
   "author": "yangjingnan",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mnottobe/voucher.git"
+  },
+  "homepage": "https://github.com/Mnottobe/voucher#readme",
+  "bugs": {
+    "url": "https://github.com/Mnottobe/voucher/issues"
+  },
   "files": [
     "dist"
   ],
@@ -24,7 +40,8 @@
   "scripts": {
     "dev": "vite --config vite.demo.config.ts",
     "build": "vite build && vue-tsc -p tsconfig.build.json",
-    "typecheck": "vue-tsc --noEmit"
+    "typecheck": "vue-tsc --noEmit",
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "vue": "^3.5.0"
@@ -43,5 +60,9 @@
   },
   "engines": {
     "node": ">=24"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

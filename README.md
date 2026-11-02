@@ -15,23 +15,26 @@ pnpm typecheck
 pnpm build
 ```
 
-`demo/` 提供可编辑示例，`dist/` 输出 ESM、类型声明与样式。发布前请先构建；项目当前尚未发布到 npm。
+`demo/` 提供可编辑示例，`dist/` 输出 ESM、类型声明与样式；`npm publish` 前会自动构建。
 
 ## 接入
 
-安装本地项目并引入构建产物：
+```sh
+npm install @mnottobe/voucher vue
+```
+
+或使用 pnpm：
 
 ```sh
-pnpm add ../voucher
-pnpm add vue
+pnpm add @mnottobe/voucher vue
 ```
 
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue';
-import { Voucher } from 'voucher';
-import type { Subject, VoucherForm, VoucherTemplate } from 'voucher';
-import 'voucher/style.css';
+import { Voucher } from '@mnottobe/voucher';
+import type { Subject, VoucherForm, VoucherTemplate } from '@mnottobe/voucher';
+import '@mnottobe/voucher/style.css';
 
 const data = ref<VoucherForm | VoucherTemplate>({
   id: '', voucherNumber: 1, attachmentCount: 0, voucherSource: 1,
